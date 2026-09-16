@@ -21,6 +21,11 @@
 @media(max-width:360px){.course-body{padding:20px}.course-actions{flex-direction:column;align-items:start}.hero-note{font-size:.8rem}.featured-copy{padding:24px}.whatsapp-row{gap:10px}.whatsapp-row a{font-size:.9375rem}.contact-card{padding:20px}.stat>strong{font-size:1.9rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 @media print{.site-header{position:static}.nav,.menu-toggle,.hero-actions,.hero-visual,.featured-art,.mini-pattern{display:none!important}.container{width:100%}.hero-grid,.institute-grid,.contact-grid{display:block;min-height:0}.hero-copy{padding:20px 0}.hero h1{font-size:3rem}.course{break-inside:avoid}.academics,.institute,.contact{padding:25px 0}.course-photo{max-height:180px}.course h3{font-size:1.5rem}.featured{display:block}}
+
+/* 07 · Clubes TED Ed y novedades: CSS nativo, sin dependencia de Tailwind. */
+.ted-section{padding:72px 0;background:var(--navy);color:white}.ted-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:center}.ted-section h2{margin:20px 0;font-size:clamp(2.4rem,4.5vw,4.4rem)}.ted-section p:not(.eyebrow){max-width:700px}.ted-section .button{margin-top:28px}.ted-detail{border-left:3px solid var(--pink);padding:12px 0 12px 30px}.ted-detail strong{display:block;font:700 clamp(2rem,4vw,3.5rem)/1.15 Helvetica,Arial,sans-serif;margin:12px 0}.ted-detail span{display:block}.news-section{padding:80px 0}.news-heading{max-width:850px;margin-bottom:34px}.news-heading h2{margin:18px 0}.news-heading>p:last-child{color:var(--body)}.news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}.news-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0;background:#fff}.news-card>img{aspect-ratio:16/9;object-fit:cover;background:var(--paper)}.news-body{padding:26px;display:flex;flex-direction:column;flex:1;gap:16px}.news-body time{font-size:.875rem;color:var(--body)}.news-body h3{font-size:1.5rem;line-height:1.2;overflow-wrap:anywhere}.news-body>p{color:var(--body)}.news-body a{margin-top:auto;border-top:1px solid var(--line);padding-top:16px}.news-message{grid-column:1/-1;padding:24px;background:var(--paper);border-radius:12px}.news-status{color:var(--body);margin-bottom:18px}.news-retry{color:var(--navy);background:white;border:1px solid var(--line);cursor:pointer;margin-right:16px}.featured-copy>.text-link{display:flex;width:fit-content;margin-top:12px}
+@media(max-width:1000px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.ted-grid,.news-grid{grid-template-columns:1fr}.ted-grid{gap:30px}.ted-section,.news-section{padding:54px 0}.ted-detail{padding-left:20px}}
 </style></head>
 <body><a class="skip" href="#contenido">Saltar al contenido</a>
 <!-- HEADER: extraíble a header.php. --><header class="site-header">
@@ -49,115 +54,116 @@
       <div class="course-body"><p class="course-meta">TECNICATURA SUPERIOR <span>3 años</span></p><h3 id="title-marketing">Comercialización y Marketing</h3><p class="course-description">Conectá marcas con personas. Investigá mercados y participá en estrategias comerciales, publicitarias y de productos.</p><div class="subjects"><p>Un vistazo a tu formación</p><ul><li>Comercio Electrónico</li><li>Gestión Publicitaria</li><li>Investigación del Mercado</li></ul></div><div class="course-actions"><a href="https://itec3.netlify.app/" class="plan-link" aria-label="Explorar planes de estudio: Comercialización y Marketing">Explorar plan de estudio <span aria-hidden="true">↗</span></a><a href="https://wa.me/5493764663364?text=Hola%2C%20quisiera%20consultar%20por%20Comercializaci%C3%B3n%20y%20Marketing%202027." class="consult-link" aria-label="Consultar por WhatsApp sobre Comercialización y Marketing">Consultar</a></div></div>
     </article></div>
 <p class="plans-note">Los enlaces abren la presentación interactiva: elegí tu tecnicatura para recorrer el perfil profesional y las materias de cada año.</p>
-<article class="featured dark" aria-labelledby="new-title"><div class="featured-copy"><span class="new-label">NUEVA CARRERA 2027</span><h3 id="new-title">Relaciones Públicas y<br>Comunicación Institucional</h3><p>Las organizaciones necesitan conectar. Vos podés ser parte de esa conversación. Formate para construir vínculos, comunicar y generar confianza.</p><a class="button secondary" href="https://wa.me/5493764663364?text=Hola%2C%20quisiera%20consultar%20por%20Relaciones%20P%C3%BAblicas%20y%20Comunicaci%C3%B3n%20Institucional%202027.">Consultá por la nueva carrera <span aria-hidden="true">↗</span></a></div><div class="featured-art" aria-hidden="true"><img src="assets/grafica-institucional.webp" width="472" height="315" alt="" loading="lazy"></div></article>
+<article class="featured dark" aria-labelledby="new-title"><div class="featured-copy"><span class="new-label">NUEVA CARRERA 2027</span><p class="eyebrow">Tecnicatura Superior</p><h3 id="new-title">Relaciones Públicas y<br>Comunicación Institucional</h3><p>Las organizaciones necesitan conectar. Vos podés ser parte de esa conversación. Formate para construir vínculos, comunicar y generar confianza.</p><a class="button secondary" href="https://itec3comunicacion.netlify.app/">Conocé la nueva carrera <span aria-hidden="true">↗</span></a></div><div class="featured-art" aria-hidden="true"><img src="assets/grafica-institucional.webp" width="472" height="315" alt="" loading="lazy"></div></article>
+</div></section>
+<!-- CLUBES TED ED: evento institucional destacado. -->
+<section class="ted-section" id="clubes-ted-ed" aria-labelledby="ted-title"><div class="container ted-grid">
+<div><p class="eyebrow">Nuestro gran encuentro · Edición 2026</p><h2 id="ted-title">Clubes TED Ed<br>Ideas que nos conectan.</h2><p>Un espacio para que nuestros estudiantes exploren sus ideas, construyan su propia voz y compartan con la comunidad lo que tienen para decir. La comunicación, el aprendizaje y el encuentro se vuelven protagonistas en el ITEC 3.</p><a class="button secondary" href="https://clubesteditec3.netlify.app/">Conocé el proyecto y el encuentro <span aria-hidden="true">↗</span></a></div>
+<div class="ted-detail"><span>ITEC 3 · Garupá, Misiones</span><strong>Tu voz.<br>Tus ideas.<br>Nuestra comunidad.</strong><span>Clubes TED Ed · 2026</span></div>
 </div></section>
 <!-- INSTITUTO: fachada real y datos confirmados en el pedido. -->
 <section class="institute" id="instituto" aria-labelledby="institute-title"><div class="container institute-grid"><figure class="campus-photo"><img class="" src="assets/fachada-1280.webp" srcset="assets/fachada-640.webp 640w, assets/fachada-1280.webp 1204w" sizes="(max-width: 700px) 100vw, 50vw" width="1204" height="677" alt="Fachada del Instituto Tecnológico N° 3 en Barrio Fátima, Garupá" loading="lazy" decoding="async"><figcaption><span>ITEC 3</span> Barrio Fátima · Garupá, Misiones</figcaption></figure><div class="institute-copy"><p class="eyebrow">Somos parte de tu comunidad</p><h2 id="institute-title">Tu futuro tiene<br>un lugar.<br><span>Y está cerca.</span></h2><p>Somos una institución pública y gratuita de Garupá. Hace 19 años acompañamos a quienes eligen la educación técnica superior para dar su próximo paso.</p><p>Una formación vinculada al desarrollo tecnológico y comercial de la región, con más de 300 egresados insertos en el mercado laboral.</p><a class="text-link" href="#contacto">Conectá con el instituto <span aria-hidden="true">↓</span></a></div></div></section>
 <!-- CONTACTO: datos y CTA institucionales. --><section class="contact" id="contacto" aria-labelledby="contact-title"><div class="container contact-grid"><div><p class="eyebrow">Estamos para acompañarte</p><h2 id="contact-title">El primer paso,<br>lo damos con vos.</h2><p class="contact-intro">Consultanos sobre las carreras y el proceso de ingreso. Te ayudamos a empezar tu camino en el ITEC 3.</p><dl class="contact-details"><div class="detail"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><dt>Horarios de atención</dt><dd>08:00 a 12:00 hs y 14:00 a 21:00 hs</dd></div></div><div class="detail"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s7-6 7-13a7 7 0 0 0-14 0c0 7 7 13 7 13Z"/><circle cx="12" cy="8" r="2"/></svg><div><dt>Nos encontrás en Garupá</dt><dd>Barrio Fátima · Misiones, Argentina</dd></div></div></dl></div><div class="contact-card"><p class="eyebrow">Ingreso 2027</p><h3>Tu próxima etapa empieza hoy.</h3><p>Accedé al sitio de preinscripciones para dar el primer paso hacia tu formación superior.</p><a class="button primary" href="https://itec3misiones.edu.ar/pre-inscripciones-2027/">PRE INSCRIPCIONES 2027 <span aria-hidden="true">↗</span></a><div class="whatsapp-row"><span class="icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.5-4.5A9 9 0 1 1 21 11.5Z"/><path d="M8 7c0 5 4 9 9 9l1-3-3-1-1 2-4-4 2-1-1-3-3 1Z"/></svg></span><div><small>¿Tenés dudas? Escribinos por WhatsApp</small><a href="https://wa.me/5493764663364">+54 376 466-3364 <span aria-hidden="true">↗</span></a></div></div></div></div></section>
-<!-- =============================================
-     SECCIÓN DE ÚLTIMAS NOVEDADES (WORDPRESS + JAVASCRIPT)
-     ============================================= -->
-<section class="bg-white py-20 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Encabezado de la Sección -->
-    <div class="text-center mb-14">
-      <span class="inline-block text-xs font-semibold tracking-widest text-indigo-500 uppercase mb-3">
-        Institucional
-      </span>
-      <h2 class="text-4xl font-bold text-gray-900 tracking-tight">
-        Últimas Novedades y Actividades
-      </h2>
-      <p class="mt-4 text-gray-500 text-lg max-w-2xl mx-auto">
-        Enterate de los últimos acontecimientos, talleres y novedades de nuestra comunidad educativa.
-      </p>
-    </div>
-
-    <!-- Contenedor Dinámico donde se cargarán las noticias -->
-    <div id="contenedor-noticias-wp" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Mensaje temporal de carga -->
-      <div id="cargando-noticias" class="col-span-full text-center py-10 text-gray-400">
-        <p class="animate-pulse">Conectando con el sitio institucional para traer las novedades...</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- =============================================
-     SCRIPT DE CONEXIÓN CON LA API DE WORDPRESS
-     ============================================= -->
+<!-- NOVEDADES: últimas tres entradas públicas, sin filtro de categoría. -->
+<section class="news-section" id="novedades" aria-labelledby="news-title"><div class="container">
+<div class="news-heading"><p class="eyebrow">Institucional</p><h2 id="news-title">Últimas novedades<br>y actividades</h2><p>Enterate de los acontecimientos, talleres y novedades de nuestra comunidad educativa.</p></div>
+<p id="noticias-estado" class="news-status" role="status" aria-live="polite">Cargando novedades…</p>
+<div id="contenedor-noticias-wp" class="news-grid" aria-busy="true"></div>
+<noscript><p>Para consultar las novedades, <a class="text-link" href="https://itec3misiones.edu.ar/">visitá el sitio institucional</a>.</p></noscript>
+</div></section>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    // Dirección de la API pública de tu WordPress (trae los últimos 3 posts publicados)
-    const apiURL = "https://itec3misiones.edu.ar";
-    const contenedor = document.getElementById("contenedor-noticias-wp");
-    const mensajeCarga = document.getElementById("cargando-noticias");
-
-    fetch(apiURL)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Error al conectar con WordPress");
-        }
-        return response.json();
-      })
-      .then(posts => {
-        // Si no hay posts publicados, mostramos un mensaje
-        if (posts.length === 0) {
-          contenedor.innerHTML = '<p class="col-span-full text-center text-gray-500">No hay novedades recientes para mostrar.</p>';
-          return;
-        }
-
-        // Limpiamos el contenedor (quita el mensaje de "Cargando...")
-        contenedor.innerHTML = "";
-
-        // Recorremos los 3 posts que nos devolvió WordPress
-        posts.forEach(post => {
-          // 1. Obtenemos el título de la noticia
-          const titulo = post.title.rendered;
-          
-          // 2. Obtenemos el enlace original para leer la noticia completa
-          const enlace = post.link;
-
-          // 3. Buscamos la imagen destacada. Si no tiene, usamos una de respaldo del ITEC
-          let imagenUrl = "assets/grafica-institucional.webp"; 
-          if (post._embedded && post._embedded["wp:featuredmedia"] && post._embedded["wp:featuredmedia"][0]) {
-            imagenUrl = post._embedded["wp:featuredmedia"][0].source_url;
-          }
-
-          // 4. Creamos la estructura de la tarjeta con diseño minimalista (Tailwind)
-          const tarjetaHTML = `
-            <article class="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col border border-gray-100">
-              <!-- Contenedor de la Imagen -->
-              <div class="relative overflow-hidden bg-gray-100 aspect-video">
-                <img src="${imagenUrl}" alt="${titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
-              </div>
-              <!-- Contenido de la Tarjeta -->
-              <div class="flex flex-col flex-1 p-6">
-                <h3 class="text-lg font-bold text-gray-900 leading-snug mb-4 group-hover:text-indigo-600 transition-colors duration-200">
-                  ${titulo}
-                </h3>
-                <div class="mt-auto pt-4 border-t border-gray-100">
-                  <a href="${enlace}" target="_blank" class="inline-flex items-center text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">
-                    Leer noticia completa
-                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://w3.org">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </article>
-          `;
-
-          // Inyectamos la tarjeta generada en el HTML
-          contenedor.innerHTML += tarjetaHTML;
-        });
-      })
-      .catch(error => {
-        console.error("Error fetching WordPress posts:", error);
-        contenedor.innerHTML = '<p class="col-span-full text-center text-red-500 py-4">Ocurrió un error al cargar las novedades. Por favor, visitá nuestro sitio institucional.</p>';
-      });
-  });
+(() => {
+  'use strict';
+  const container = document.getElementById('contenedor-noticias-wp');
+  const status = document.getElementById('noticias-estado');
+  const origin = 'https://itec3misiones.edu.ar';
+  const params = 'per_page=3&status=publish&orderby=date&order=desc&_embed=wp:featuredmedia';
+  // Netlify proxy primero; WordPress directo como alternativa para otros hostings.
+  const endpoints = ['/api/noticias?' + params, origin + '/wp-json/wp/v2/posts?' + params];
+  const placeholder = 'assets/grafica-institucional.webp';
+  function text(html) {
+    const doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    doc.querySelectorAll('script,style').forEach(node => node.remove());
+    return (doc.body.textContent || '').replace(/\[[^\]]*\]/g, '').replace(/\s+/g, ' ').trim();
+  }
+  function safeURL(value, fallback) {
+    try {
+      const url = new URL(value, origin);
+      if (!['https:', 'http:'].includes(url.protocol)) return fallback;
+      if (url.protocol === 'http:') url.protocol = 'https:';
+      return url.href;
+    } catch { return fallback; }
+  }
+  function node(tag, className, value) {
+    const el = document.createElement(tag);
+    if (className) el.className = className;
+    if (value !== undefined) el.textContent = value;
+    return el;
+  }
+  function card(post) {
+    const title = text(post.title?.rendered) || 'Novedad del ITEC 3';
+    const article = node('article', 'news-card');
+    const media = post._embedded?.['wp:featuredmedia']?.[0];
+    const img = node('img');
+    img.src = safeURL(media?.media_details?.sizes?.medium_large?.source_url || media?.source_url || '', placeholder);
+    if (!media?.source_url) img.src = placeholder;
+    img.alt = text(media?.alt_text); img.loading = 'lazy'; img.decoding = 'async';
+    img.width = 800; img.height = 450;
+    img.addEventListener('error', () => { img.src = placeholder; }, {once:true});
+    const body = node('div', 'news-body');
+    // Fecha local editorial; evita convertir medianoche a otro día por zona horaria.
+    const date = String(post.date || '').slice(0,10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      const parsed = new Date(date + 'T12:00:00Z');
+      if (!Number.isNaN(parsed.getTime())) {
+        const time = node('time', '', new Intl.DateTimeFormat('es-AR', {day:'numeric',month:'long',year:'numeric',timeZone:'UTC'}).format(parsed));
+        time.dateTime = date; body.append(time);
+      }
+    }
+    body.append(node('h3', '', title));
+    const excerpt = text(post.excerpt?.rendered);
+    if (excerpt) body.append(node('p', '', excerpt.length > 170 ? excerpt.slice(0,167).trimEnd() + '…' : excerpt));
+    const link = node('a', 'text-link', 'Leer noticia completa ↗');
+    link.href = safeURL(post.link, origin); link.setAttribute('aria-label', 'Leer noticia: ' + title);
+    body.append(link); article.append(img, body); return article;
+  }
+  async function request(url) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000);
+    try {
+      const response = await fetch(url, {signal:controller.signal, credentials:'omit', cache:'no-store', headers:{Accept:'application/json'}});
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      if (!(response.headers.get('content-type') || '').includes('json')) throw new Error('Se recibió HTML u otro formato, no JSON');
+      const posts = await response.json();
+      if (!Array.isArray(posts)) throw new Error('La respuesta no es una lista de entradas');
+      if (posts.some(p => !p || typeof p !== 'object' || typeof p.title?.rendered !== 'string' || typeof p.link !== 'string')) throw new Error('Formato de entrada inválido');
+      return posts.filter(p => !p.status || p.status === 'publish').slice(0,3);
+    } finally { clearTimeout(timeout); }
+  }
+  async function load() {
+    container.replaceChildren(); container.setAttribute('aria-busy', 'true');
+    status.textContent = 'Cargando novedades…';
+    try {
+      let posts;
+      for (const endpoint of endpoints) {
+        try { posts = await request(endpoint); break; }
+        catch (error) { console.warn('[ITEC 3 · novedades]', endpoint, error.message); }
+      }
+      if (!posts) throw new Error('Ninguna ruta de noticias respondió correctamente');
+      container.replaceChildren(...posts.map(card));
+      status.textContent = posts.length ? 'Últimas publicaciones del ITEC 3.' : 'Próximamente compartiremos nuevas publicaciones.';
+    } catch (error) {
+      console.error('[ITEC 3 · novedades]', error.message);
+      status.textContent = 'No pudimos cargar las novedades en este momento.';
+      const message = node('div', 'news-message');
+      const retry = node('button', 'button news-retry', 'Volver a intentar'); retry.type = 'button';
+      retry.addEventListener('click', load);
+      const link = node('a', 'text-link', 'Visitar el sitio institucional ↗'); link.href = origin;
+      message.append(retry, link); container.append(message);
+    } finally { container.setAttribute('aria-busy', 'false'); }
+  }
+  load();
+})();
 </script>
 </main><!-- FOOTER: extraíble a footer.php. --><div class="color-strip" aria-hidden="true"></div><footer class="footer dark"><div class="container footer-inner"><img src="assets/logo-itec3-blanco.png" width="2240" height="672" alt="ITEC 3"><p>Instituto Tecnológico N° 3<br>Educación pública y gratuita · Garupá, Misiones</p><a href="#inicio">Volver al inicio ↑</a></div></footer>
 <script>

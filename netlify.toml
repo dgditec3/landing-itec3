@@ -13,3 +13,11 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Noticias publicas de WordPress: consulta desde el mismo dominio de la landing.
+# Netlify conserva los parametros de consulta enviados por index.html.
+[[redirects]]
+  from = "/api/noticias"
+  to = "https://itec3misiones.edu.ar/wp-json/wp/v2/posts"
+  status = 200
+  force = true
